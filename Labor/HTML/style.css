@@ -1,0 +1,41 @@
+body {
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color : red;
+}
+
+p {
+    color : blue;
+}
+
+#heading {
+    color : green;
+}
+
+.heading-class {
+    color: aqua;
+}
+
+a[download] {
+    color: orange;
+}
+
+a[href="Resume.html"]{
+    color : gray;
+    font-size: 100px;
+}
+
+a:visited {
+    color: brown;
+}
+
+p::first-line {
+    color: blueviolet;
+}
+
+ul > li#rice {
+    color: yellow;
+    font-size: 50px;
+}
