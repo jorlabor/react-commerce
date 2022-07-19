@@ -15,107 +15,120 @@
     <head>
         <meta charset="utf-8"/>
         <title>My Resume</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./resume-style.css"/>
     </head>
     <body>
-        <h1>James Resume</h1>
         <article>
-            <section>
+            <section id="header-info">
                 <img 
+                    id="resume-pic"
                     src="./images/labor-pic.jpg" 
                     srcset="./images/labor-pic200.jpg 200w, ./images/labor-pic400.jpg 400w, ./images/labor-pic800.jpg 800w" 
                     sizes="(max-width: 500px) 200px,(max-width: 900px) 400px, 800px" 
                     alt="Resume picture"
                 />
-                <h3>James Oliver R. Labor</h3>
-                <p>
-                    Block 10 Lot 12, SOuth Villa Subdivision. Ma-a 
-                    Davao City
-                </p>
+                <div class="header-address">
+                    <h3>James Oliver R. Labor</h3>
+                    <p>
+                        Block 10 Lot 12, South Villa Subdivision. Ma-a 
+                        Davao City
+                    </p>
+                    <p>
+                        <strong>Motto:</strong>
+                        <br><br>
+                        To work with professionalism in a highly professional environment. <br>
+                        To impart and  develop the knowledge and skills I learned and acquired in school, <br>
+                        during my  internship and from my work experience and become more dependable and  <br>
+                        responsible which would eventually enable me to become a better employee and  person.
+                    </p>
+                </div>
+
+                <div class="header-contact">
+                    <a href="" download="CV-JORLABOR-06-14-2022.docx">Download CV here!</a>
+                    <p>
+                        <strong>Contact +639777694838</strong>
+                    </p>
+                    <p>
+                        <a href="https://ph.yahoo.com/?p=us"><strong>jamesoliverlabor@yahoo.com</strong></a>
+                    </p>
+                </div>
             </section>
             
-            <p>
-                <strong>Motto:</strong>
-                <br>
-                To work with professionalism in a highly professional environment. <br>
-                To impart and  develop the knowledge and skills I learned and acquired in school, <br>
-                during my  internship and from my work experience and become more dependable and  <br>
-                responsible which would eventually enable me to become a better employee and  person.
-            </p>
-            <table>
-                <tr>
-                    <td>
-                        <p>
-                            <h3>Personal Information</h3>
+            <hr>
+            
+            <section id="experience-container">
+                <div class="experience-details">
+                    <h3>Personal Information</h3>
+                    <ul>
+                        <li><b>Birthdate:</b> May 3, 1995</li>
+                        <li><b>Age:</b> 27 years old</li>
+                        <li><b>Gender:</b> Male</li>
+                        <li><b>Religion:</b> Roman Catholic</li>
+                        <li><b>Height:</b> 5’4 “</li>
+                        <li><b>Weight:</b> 69 kg</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-details">
+                    <h3>Experience</h3>
+                    <ul>
+                        <li>
+                            <b>OJT:</b> Offsourcing Inc. <em>(April 2016 – May 2016)</em>
                             <ul>
-                                <li><b>Birthdate:</b> May 3, 1995</li>
-                                <li><b>Age:</b> 27 years old</li>
-                                <li><b>Gender:</b> Male</li>
-                                <li><b>Religion:</b> Roman Catholic</li>
-                                <li><b>Phone Number:</b> +639777694838</li>
-                                <li><b>Email:</b> jamesoliverlabor@yahoo.com</li>
-                                <li><b>Height:</b> 5’4 “</li>
-                                <li><b>Weight:</b> 69 kg</li>
+                                <li>Setup computers</li>
+                                <li>Basic Network cabling</li>
                             </ul>
-                        </p>
-                    </td>
-                    <td>
-                        <p>
-                            <h3>Experience</h3>
+                        </li>
+                        <li><b>Bukas Palad Tagaytay:</b> <em>(September 2017 – February 2018)</em></li>
+                        <li>
+                            <b>Jinisys Software Inc.:</b> <em>(March 1, 2019 – March 27, 2020) </em>
                             <ul>
-                                <li>
-                                    <b>OJT:</b> Offsourcing Inc. <em>(April 2016 – May 2016)</em>
-                                    <ul>
-                                        <li>Setup computers</li>
-                                        <li>Basic Network cabling</li>
-                                    </ul>
-                                </li>
-                                <li><b>Bukas Palad Tagaytay:</b> <em>(September 2017 – February 2018)</em></li>
-                                <li>
-                                    <b>Jinisys Software Inc.:</b> <em>(March 1, 2019 – March 27, 2020) </em>
-                                    <ul>
-                                        <li>Software Engineer</li>
-                                        <li>Fullstack Web Development (AngularJS, ASP.Net, MS SQL)</li>
-                                        <li>Desktop Applications (C#)</li>
-                                    </ul>
-                                </li>
-                                <li><b>City Assesors Office:</b> <em>(March 11, 2022 – June 30, 2022) </em></li>
+                                <li>Software Engineer</li>
+                                <li>Fullstack Web Development (AngularJS, ASP.Net, MS SQL)</li>
+                                <li>Desktop Applications (C#)</li>
                             </ul>
-                        </p>
-                    </td>
-                </tr>
-            </table>
+                        </li>
+                        <li><b>City Assesors Office:</b> <em>(March 11, 2022 – June 30, 2022) </em></li>
+                    </ul>
+                </div>  
+            </section>
 
-            <table border="1">
-                <caption><h3>Seminar/Training</h3></caption>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Date</th>
-                </tr>
-                <tr>
-                    <td>Computer Studies Week: Functional Programming/Web</td>
-                    <td>Finster Auditorium, Ateneo de Davao University</td>
-                    <td>January 11, 2017</td>
-                </tr>
-                <tr>
-                    <td>Focolare Gen School </td>
-                    <td>School of Oriental Religion, Tagaytay</td>
-                    <td>July 4, 2017</td>
-                </tr>
-                <tr>
-                    <td>Google I/O Extended Cebu 2019 </td>
-                    <td>J Centre Mall, Mandaue City</td>
-                    <td>July 20, 2019</td>
-                </tr>
-                <tr>
-                    <td>GDG DevFest Cebu 2019 </td>
-                    <td>Golden Peak Hotel, Cebu City</td>
-                    <td>November 16, 2019</td>
-                </tr>
-            </table>
-            <br>
-            <a href="" download="./images/CV-JORLABOR-06-14-2022.docx">Download CV here!</a>
-            <!-- <a href="" download="images/CV-JORLABOR-06-14-2022.docx">Download CV here!</a> -->
+            <hr>
+            
+            <div class="seminar-container">
+                <table border="1">
+                    <caption><h3>Seminar/Training</h3></caption>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr>
+                        <td>Computer Studies Week: Functional Programming/Web</td>
+                        <td>Finster Auditorium, Ateneo de Davao University</td>
+                        <td>January 11, 2017</td>
+                    </tr>
+                    <tr>
+                        <td>Focolare Gen School </td>
+                        <td>School of Oriental Religion, Tagaytay</td>
+                        <td>July 4, 2017</td>
+                    </tr>
+                    <tr>
+                        <td>Google I/O Extended Cebu 2019 </td>
+                        <td>J Centre Mall, Mandaue City</td>
+                        <td>July 20, 2019</td>
+                    </tr>
+                    <tr>
+                        <td>GDG DevFest Cebu 2019 </td>
+                        <td>Golden Peak Hotel, Cebu City</td>
+                        <td>November 16, 2019</td>
+                    </tr>
+                </table>
+            </div>  
+            
         </article>
     </body>
 </html>
