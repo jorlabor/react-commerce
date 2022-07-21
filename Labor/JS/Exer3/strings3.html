@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Strings: Task 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    // Fix the broken quote:
+    // Change the casing to correct sentence case (all lowercase, except for upper case first letter).
+    //  Store the new quote in a variable called fixedQuote.
+    // In fixedQuote, replace "green eggs and ham" with another food that you really don't like.
+    // There is one more small fix to do — add a full stop onto the end of the quote, 
+    // and save the final version in a variable called finalQuote.
+    const quote = 'I dO nOT lIke gREen eGgS anD HAM';
+    
+    // Add your code here
+    let fixedQuote = ''
+    let finalQuote = ''
+
+    for (let i in quote) {
+        if(i==='0'){
+            fixedQuote += quote[i]
+        } else {
+            fixedQuote += quote[i].toLowerCase()
+        }
+    }
+   
+    let food1 = 'cheesecake'
+    let food2 = 'lemon'
+
+    finalQuote = fixedQuote.replace("green eggs", food1).replace("ham", food2);
+    finalQuote += '.'
+    
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    const para1 = document.createElement('p');
+    para1.textContent = fixedQuote;
+    const para2 = document.createElement('p');
+    para2.textContent = finalQuote;
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+  </script>
+
+</html>
