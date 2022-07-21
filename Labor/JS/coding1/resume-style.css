@@ -21,6 +21,11 @@ article {
     margin-right: 100px;
 }
 
+.header-address-color {
+    background-color: #990003;
+    margin-right: 100px;
+}
+
 #motto-para {
     max-width: 400px;
     font-size: 100%;
