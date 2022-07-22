@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>OOJS: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+// Next we'd like you to create a Square class that inherits from Shape, and adds a calcArea() method that calculates the square's area. Also set up the constructor so that the 
+// name property of Square object instances is automatically set to square, and the sides property is automatically set to 4. When invoking the constructor, 
+// you should therefore just need to provide the sideLength property.
+
+// Create an instance of the Square class called square with appropriate property values, and call its calcPerimeter() and calcArea() methods to show that it works OK.
+class Shape {
+    constructor(name,sides,sideLength) {
+        this.name = name;
+        this.sides = sides;
+        this.sideLength = sideLength;
+    }
+    calcPerimeter() {
+        return console.log(`${this.name} Perimeter: `, this.sides * this.sideLength)
+    }
+
+  }
+
+  class Square extends Shape {
+    constructor(name,sides,sideLength) {
+        super(name);
+        this.sideLength = sideLength;
+    }
+    get snam() {
+        return this.name;
+    }
+    set snam(x) {
+        this.name = 'Square';
+    }
+    get sside() {
+        return this.name;
+    }
+    set sside(x) {
+        this.name = 4;
+    }
+  }
+
+  const square_object = new Square(40)
+  square_object.calcPerimeter()
+  </script>
+
+</html>
