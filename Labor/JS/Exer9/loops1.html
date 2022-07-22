@@ -31,12 +31,16 @@
 
     const myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
     const list = document.createElement('ul');
-
+    // const list_item = document.createElement('li');
     // Add your code here
 
     myArray.map((ingredient)=>{
-      list.append(`<li> ${ingredient} </li>`)
+      let item = document.createElement('li')
+      item.textContent = ingredient
+      list.appendChild(item)
     })
+
+    console.log(list)
 
     // Don't edit the code below here!
 
