@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+// /In the code you wrote for Exercise 4, the greeting() method is defined twice, once for each cat. 
+// This isn't ideal (specifically, it violates a principle in programming sometimes called DRY or "Don't Repeat Yourself").
+
+// In this task we want you to improve the code so greeting() is only defined once, and every cat instance gets its own 
+// greeting() method. Hint: you should use a JavaScript constructor to create cat instances.
+    const cat = {
+      name : 'Bertie',
+      breed : 'Cymric',
+      color : 'white',
+      greeting: function() {
+        console.log('Meow!');
+      }
+    }
+    
+    class Cat {
+        constructor(name, breed, color) {
+            this.name = name;
+            this.breed = breed;
+            this.color = color
+        }
+        greeting(name,breed) {
+            console.log(`Hello, said ${name} the ${breed}`);
+        }
+    }
+
+    let cat_object = new Cat('Bertie', 'Cymric', 'white')
+    let cat_object2 = new Cat('Mingming', 'Ginger', 'ginger')
+    cat_object.greeting(cat_object2.name, cat_object2.breed)
+    cat_object2.greeting(cat_object.name, cat_object.breed)
+
+    // cat_object.greeting()
+    // function catGreeting(name,breed) {
+    //     console.log(`Hello, said ${name} the ${breed}`);
+    // }
+  </script>
+
+</html>
