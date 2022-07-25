@@ -71,12 +71,18 @@
                     <nav id="nav">
                         <Logo logoSrc={props.logoSrc} logoClassName="logo-nav"/>
                         <NavList navlistClassName="nav-list" navArray={navArray}/>
-                        <div className="register-wrapper">
-                            <div className="btn-login">Login</div>
-                            <div className="btn-register">Register</div>
-                        </div>
+                        <ButtonRegister btnRegisterClassName="register-wrapper"/>
                         <img className="nav-collapse" src="./images/nav-icon.png"/> 
                     </nav>
+                )
+            }
+
+            function ButtonRegister(props) {
+                return (
+                    <div className={props.btnRegisterClassName}>
+                        <div className="btn-login">Login</div>
+                        <div className="btn-register">Register</div>
+                    </div>
                 )
             }
 
