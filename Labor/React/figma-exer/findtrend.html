@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.development.js"
+            ></script>
+            <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./findtrend-style.css"/>
+        <title>Findtrend</title>
+    </head>
+    <body>
+        <div id="root">
+            
+        </div> 
+        <script type="text/babel">
+            
+            const navArray = ['About', 'How it Work', 'Pricing', 'Solution', 'Features']
+            const sponsorArray = ['Microsoft','Allianz','Upwork','Volvo','Grab','Verizon',
+            'Coinbase','Expedia','Airtable','Magento','Carrera','Bonanze','WeTransfer','Suzuki'
+            ,'Algolia','Heineken']
+
+
+            function HeroSection(props) {
+                return (
+                    <section id={props.heroId}>
+                    <Navbar 
+                        logoSrc="https://assets.website-files.com/6233f2ac51d2013d6dca2856/6233fa2810f7c36829594905_main-logo.png"
+                    />
+                    <p className="hero-slogan"><span>Minimize your tabs.</span><span>Find the trends!</span></p>
+                    <p className="hero-description">
+                        Don't let your computer memories consumes all of those browser tabs. <br/>
+                        Findtrend let you gathers all of your favorite website into one place.
+                    </p>
+                    <div className="btn-green">
+                        <p>Get Started</p>
+                        <img src="https://assets.website-files.com/6233f2ac51d2013d6dca2856/623409f51c563d60d18c9ac1_Fire.svg" loading="lazy" alt="" className="image" />
+                    </div>
+                    <div className="hero-btn-wrapper">
+                        <div className="hero-btn btn-up twitt">
+                            <img className="tab-icon" src="./images/twitter-pic.png"/>
+                            <p>Cryptopunk - Search</p>
+                        </div>
+                        <div className="hero-btn btn-down pin">
+                            <img className="tab-icon" src="./images/pinterest-img.png"/>
+                            <p>Popular Design - Search</p>
+                        </div>
+                        <div className="hero-btn btn-up fb">
+                            <img className="tab-icon" src="./images/facebook-img.png"/>
+                            <p>Product Design - Search</p>
+                        </div>
+                        <div className="hero-btn btn-down dribb">
+                            <img className="tab-icon" src="https://assets.website-files.com/6233f2ac51d2013d6dca2856/6234180dc8cee604df35fcb7_dribble.svg" loading="lazy" alt="" />
+                            <p>Elon Musk - Search</p>
+                        </div>
+                    </div>
+                </section>
+                )
+            }
+
+            function Navbar(props) {
+                return (
+                    <nav id="nav">
+                        <Logo logoSrc={props.logoSrc} logoClassName="logo-nav"/>
+                        <NavList navlistClassName="nav-list" navArray={navArray}/>
+                        <div className="register-wrapper">
+                            <div className="btn-login">Login</div>
+                            <div className="btn-register">Register</div>
+                        </div>
+                        <img className="nav-collapse" src="./images/nav-icon.png"/> 
+                    </nav>
+                )
+            }
+
+            function Logo(props) {
+                return (
+                    <div  className={props.logoClassName}>
+                        <img src={props.logoSrc} loading="lazy" alt="" className="nav__img" />
+                    </div>
+                )
+            }
+
+            
+            function NavListItems(props) {
+                return (
+                    <li>{props.name}</li>
+                )
+            }
+
+
+            function NavList(props) {
+                
+                //Reminder: refactor the nav list item creation
+
+                return (
+                    <ul className={props.navlistClassName}>
+                        {props.navArray.map((item)=>{
+                            
+                            return <NavListItems key={item} name={item}/>
+                        })}
+                    </ul>
+                )
+            }
+
+            function TabSection(props) {
+                return (
+                    <section className={props.tabId}>
+                        <p className="tab-title">Open new tabs is sh*t</p>
+                        <div className="white-div">
+                            <div className="black-div">
+                                <img src="https://assets.website-files.com/6233f2ac51d2013d6dca2856/6233fa2810f7c36829594905_main-logo.png" className="tab-img" />
+                                <span> - Elon Musk</span>
+                            </div>
+                        </div>
+                        <p className="tab-slogan">
+                            A solution for your browser tabs and don't make your device get slower over time. Get
+                            ease and faster to discover a trend with just one tab.
+                        </p>
+                    </section>
+                )
+            }
+            
+            function SponsorSection(props) {
+                
+
+                return (
+                    <section id={props.whiteId}>
+                        <div className="long-section">
+                            <p>
+                                <span className="white-span-first">
+                                    Findtrend helps you to increase your productivity and reduce your computer's memory load,
+                                </span>
+                                <span className="white-span-second"> an application that can fulfill your daily browsing needs.</span>
+                            </p>
+                        </div>
+                        <p className="white-span-grid">
+                            <span >
+                                Findtrend make +1000 Startup grow
+                            </span>
+                        </p>
+                        <div className="sponsor-container">
+
+                            {props.sponsorArray.map((item)=>{
+                                return <Sponsor key={item} sponsorName={item} sponsorClassName="white-sponsor" />
+                            })}
+
+                        </div>
+                    </section>
+                )
+            }
+
+            function Sponsor(props) {
+                return (
+                    <div className={props.sponsorClassName}>
+                        <span>{props.sponsorName}</span>
+                    </div>
+                )
+            }
+            
+            function JoinSection(props) {
+                return (
+                    <section id={props.joinId}>
+                        <p>
+                            <span className="join-span-first">
+                                Join us on email for
+                            </span>
+                            <br/>
+                            <span className="join-span-second"> 
+                                more trending topics
+                            </span>
+                        </p>
+                        <div className="join-black-div">
+                            <span>Join Now</span>
+                        </div>
+                    </section>
+                )
+            }
+            
+            function Footer(props) {
+                return (
+                    <footer className="footer-section">
+                        <img 
+                            src="https://assets.website-files.com/6233f2ac51d2013d6dca2856/62343bdfa8974144b364a891_main-logo_dark%27.png" 
+                            alt="" 
+                            className="logo-footer" 
+                        />
+                        <p className="footer-notes">
+                            <span>Privacy Policy</span>
+                            <span>Terms and Conditions</span>
+                            <span>Contact Us</span>
+                            <span>Careers</span> 
+                        </p>
+                    </footer>
+                )
+            }
+
+            function App () {
+                return (
+                    <React.Fragment>
+                        <HeroSection heroId="hero-section"/>
+                        <TabSection tabId="tab-section" />
+                        <SponsorSection whiteId="white-section" sponsorArray={sponsorArray} />
+                        <JoinSection joinId="join-section" />
+                        <Footer footerId="footer-section"/>
+                    </React.Fragment>
+                )
+            }
+
+            const root = ReactDOM.createRoot(document.querySelector('#root'));
+            root.render(App())
+        </script>
+    </body>
+</html>
