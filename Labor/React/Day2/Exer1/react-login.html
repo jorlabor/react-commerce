@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./login-style.css">
+        <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.development.js"
+            ></script>
+            <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <title>React Login</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            
+            
+
+            function Login(props) {
+
+                const [loginData, setLoginData] = React.useState({
+                    email: "",
+                    password: ""
+                })
+
+                function handleChange(event) {
+                    console.log(loginData)
+                    const {name, value} = event.target
+                    setLoginData(prevLoginData => {
+                        return {
+                            ...prevLoginData,
+                            [name]: value
+                        }
+                    })
+                }
+                
+                // console.log(JSON.parse(localStorage.getItem("loginData")))
+
+                function handleSubmit(event) {
+                    event.preventDefault();
+                    // const test = JSON.parse(localStorage.getItem("loginData"))
+                    // console.log("Local", test.email)
+                    // console.log("Logged in")
+                    if(loginData.email !== "" && loginData.password !== "") {
+                        alert("Logged In Successfully")
+                        localStorage.setItem("loginData", JSON.stringify(loginData))
+                        window.location = "./index.html"
+                    }
+                    
+                }
+
+                return (
+                    <div className="login-section-container">
+                        <p className="login-header">Login</p>
+                        <p className="login-slogan">Enter your credentials to access your account.</p>
+                        <Button className="btn-login google" label="Login with Google"/>
+                        <h2><span>Or</span></h2>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            onChange={handleChange}
+                            name="email"
+                            value={loginData.email}
+                            required
+                        />
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            onChange={handleChange}
+                            name="password"
+                            value={loginData.password}
+                            required
+                        />
+                        <Button className="btn-login main--login" label="Login" onClick={handleSubmit}/>
+                        <p className="login-slogan">Dont' have an account? Register Here</p>
+                    </div>
+                )
+            }
+
+            function SplashImage(props) {
+                return(
+                    <div className="splash-section-container"></div>
+                )
+            }
+
+            function Button(props) {
+                return (
+                    <button className={props.className} onClick={props.onClick}>{props.label}</button>
+                )
+            }
+
+            function App() {
+                return (
+                    <div className="container">
+                        <Login />
+                        <SplashImage />
+                    </div>
+                )
+            }
+
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(<App />);
+        </script>
+    </body>
+</html>

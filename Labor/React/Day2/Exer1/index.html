@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./login-style.css">
+        <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.development.js"
+            ></script>
+            <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <title>Welcome</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function App() {
+                const loginData = JSON.parse(localStorage.getItem("loginData"))
+
+                function handleSubmit(event) {
+                    event.preventDefault();
+                    alert("Logged Out")
+                    localStorage.clear()
+                    window.location = "./react-login.html"
+                }
+
+                return (
+                    <div className="index--container">
+                        <h1>Welcome, {loginData.email}</h1>
+                        <p className="login-slogan">You are now logged in the app.</p>
+                        <button className="btn-login main--login" onClick={handleSubmit}>Logout</button>
+                    </div>
+                )
+            }
+
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(<App />);
+        </script>
+    </body>
+</html>

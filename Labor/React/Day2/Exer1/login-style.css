@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    display:flex;
+}
+
+.splash-section-container {
+    background: url(./images/unsplash-img.jpg);
+    background-size: cover;
+    background-position: center;
+    flex-basis: 50%;
+    height: 100vh;
+}
+
+.login-section-container {
+    padding: 40px 100px;
+    margin-top: 150px;
+    /* border: 1px solid red; */
+    width: 756px;
+    height: 650px;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-header {
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 63px;
+}
+
+.login-slogan {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #828282;
+}
+
+.btn-login  {
+    width: 400px;
+    height: 55px;
+    border-radius: 6px;
+}
+
+.google {
+    border: 1px solid #DDDDDD;
+    background: #FFFFFF;
+}
+
+.google:hover {
+    background: #FFFFFF;
+}
+
+.main--login {
+    background: #2F80ED;
+    border: 1px solid #2F80ED;
+    color: #FFF;
+}
+
+.main--login:hover {
+    background: #0e468f;
+}
+
+h2 {
+    width: 75%; 
+    text-align: center; 
+    border-bottom: 1px solid #E0E0E0; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+h2 span { 
+    font-weight: 400;
+    font-size: 16px;
+    background:#fff; 
+    padding:0 30px; 
+}
+
+input {
+    width: 400px;
+    height: 45px;
+    border-radius: 6px;
+}
+
+.index--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
