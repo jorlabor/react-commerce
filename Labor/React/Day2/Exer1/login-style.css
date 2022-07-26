@@ -61,6 +61,7 @@ body {
     background: #2F80ED;
     border: 1px solid #2F80ED;
     color: #FFF;
+    
 }
 
 .main--login:hover {
@@ -82,9 +83,15 @@ h2 span {
     padding:0 30px; 
 }
 
+label {
+    flex-basis: 20%;
+}
+
 input {
-    width: 400px;
-    height: 45px;
+    padding-left: 6px;
+    flex-grow: 1;
+    /* flex-basis: 60%; */
+    min-height: 45px;
     border-radius: 6px;
 }
 
@@ -94,4 +101,19 @@ input {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Utilities */
+
+.mb-6 {
+    margin-bottom: 6px;
+}
+
+.mb-10 {
+    margin-bottom: 15px;
 }
