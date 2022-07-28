@@ -1,20 +1,21 @@
 import * as React from "react"
 import {Routes, Route, Link} from "react-router-dom"
 import Home from "./pages/Home"
-import About from "./pages/About"
+import Product from "./pages/Product"
+import { Flex, Spacer } from '@chakra-ui/react'
+import dataSet from "./productData"
 
 export default function App() {
+
+    const [productData, setProductData] = React.useState(dataSet)
+    const [isAdded, setIsAdded] = React.useState(false)
+
     return (
-        <div className="App">
-            <h1>Welcome to React Router!</h1>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-            </nav>
+        <Flex className="App" m={2}>
             <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/about" element={<About />}/>
+                <Route path="/" element={<Home data={productData} />}/>
+                <Route path="/product" element={<Product data={productData} />}/>
             </Routes>
-        </div>
+        </Flex>
     )
 }
