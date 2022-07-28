@@ -20,14 +20,14 @@
         <div id="root"></div>
         <script type="text/babel">
             
-            
-
             function Login(props) {
 
                 const [loginData, setLoginData] = React.useState({
                     email: "",
                     password: ""
                 })
+
+                const [isLogin, setIsLogin] = React.useState(false)
 
                 function handleChange(event) {
                     console.log(loginData)
@@ -44,6 +44,7 @@
 
                 function handleSubmit(event) {
                     event.preventDefault();
+                    setIsLogin(true)
                     // const test = JSON.parse(localStorage.getItem("loginData"))
                     // console.log("Local", test.email)
                     // console.log("Logged in")
