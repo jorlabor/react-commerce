@@ -11,7 +11,7 @@ import Card from "../../components/molecules/Card"
 import EditableCard from "../../components/molecules/EditableCard" 
 
 export default function Users() {
-    const [user, setUsers] = useState([])
+    const [users, setUsers] = useState([])
     const [isEdit, setIsEdit] = useState(false)
     const col = 'users'
     
@@ -43,43 +43,34 @@ export default function Users() {
         getUserData()
       }
 
-
-    const arrayUsers = user.map((user)=>{
+    const arrayUsers = users.map((user)=>{
         return (
-                !isEdit ? <Card 
-                     key={user.id}
-                    firstName={user.firstName} 
-                    id={user.id} 
-                    imgUrl='./images/profile1.jpg'
-                    lastName={user.lastName} 
-                    handleDelete={handleDelete}
-                    isEdit={isEdit}
-                    toggleIsEdit={toggleIsEdit}
+                    <Card 
+                        key={user.id}
+                        firstName={user.firstName} 
+                        id={user.id} 
+                        imgUrl='./images/profile1.jpg'
+                        lastName={user.lastName} 
+                        handleDelete={handleDelete}
+                        isEdit={isEdit}
+                        toggleIsEdit={toggleIsEdit}
                      /> 
-
-                     :
-                     <EditableCard 
-                     key={user.id}
-                    firstName={user.firstName} 
-                    id={user.id} 
-                    imgUrl='./images/profile1.jpg'
-                    lastName={user.lastName} 
-                    handleDelete={handleDelete}
-                    isEdit={isEdit}
-                    toggleIsEdit={toggleIsEdit}
-                     /> 
-
 
         )
     })
 
     
-    function toggleIsEdit() {
+    function toggleIsEdit(id) {
+        // debugger
+        // setUsers({
+        //     ...users,
+        //     isEditable:!isEdit
+        // })
         setIsEdit(!isEdit)
     }
 
     useEffect(()=>{
-        console.log(isEdit)
+        console.log(users.isEditable)
     },[isEdit])
 
       useEffect(()=>{
@@ -92,12 +83,12 @@ export default function Users() {
             <Flex direction='column' gap={5}>
                 <RtText textValue='User Management' />
                 <SearchBar />
-                <Flex alignItems='center' gap={2}>
+                <Flex alignItems='center' gap={2} m={5}>
                     <Link to="/addUser" ><IconButton size='lg' variant='outline' colorScheme='teal' icon={<AddIcon />} /></Link>
                     <RtText textValue='Add User'/>
                 </Flex>
             </Flex>
-            <Flex wrap='wrap'>
+            <Flex wrap='wrap' gap={3}>
                 {arrayUsers}
             </Flex>
         </Container>

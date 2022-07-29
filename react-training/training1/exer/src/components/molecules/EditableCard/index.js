@@ -19,7 +19,7 @@ export default function EditableCard({id,firstName,lastName,imgUrl,handleDelete,
                 <Input type='text' name="lastName" onChange='' value={lastName} placeholder='Last Name' />
             </Stack>
             <Flex gap={2}>
-                <IconButton onClick={toggleIsEdit} size='sm' variant='solid' colorScheme='orange' icon={<EditIcon />} />
+                <IconButton onClick={() => toggleIsEdit(id)} size='sm' variant='solid' colorScheme='orange' icon={<EditIcon />} />
                 <IconButton onClick={() => handleDelete(id)} size='sm' variant='solid' colorScheme='red' icon={<DeleteIcon />} />
             </Flex>
         </Flex>

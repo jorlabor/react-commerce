@@ -12,6 +12,7 @@ export default function Guide({ title }) {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
+    isEditable: false
   })
 
   const collect = 'users'
